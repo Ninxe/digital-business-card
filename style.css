@@ -57,6 +57,10 @@ body * {
   margin-top: 8px;
 }
 
+#profile p:last-child {
+  font-weight: 200;
+}
+
 #switch {
   position: relative;
   width: 64px;
