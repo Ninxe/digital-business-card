@@ -1,4 +1,4 @@
-<h1 align="center">DevLinks</h1>
+<h1 align="center">Digital Business Card</h1>
 
 <p align="center">
   <a href="#-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -12,7 +12,7 @@
 <br>
 
 <p align="center">
-  <img alt="DevLinks project" src=".github/preview.jpg" width="100%">
+  <img alt="Digital Business Card project" src=".github/preview.jpg" width="100%">
 </p>
 
 ## 🚀 Technologies
@@ -26,7 +26,7 @@ This project was developed by these next technologies:
 
 ## 💻 Project
 
-DevLinks is a link aggregator to use as an online business card.
+Digital Business Card is a link aggregator.
 
 ---
 
