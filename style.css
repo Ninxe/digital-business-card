@@ -12,6 +12,10 @@
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url("./assets/moon-stars.svg");
+
+  /* Loading screen colors */
+  --loading-bg-color: rgba(0, 0, 0, 1); /* Default for dark mode */
+  --loading-text-color: white; /* Default for dark mode */
 }
 
 .light {
@@ -22,6 +26,10 @@
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url("./assets/sun.svg");
+
+  /* Loading screen colors */
+  --loading-bg-color: white; /* Background for light mode */
+  --loading-text-color: black; /* Text color for light mode */
 }
 
 body,
@@ -37,6 +45,66 @@ body {
 body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
+}
+
+/* Loading Screen Styles */
+#loading-screen {
+  position: fixed; /* Fixed position to cover the entire viewport */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  background-color: var(--loading-bg-color); /* Background color variable */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 9999; /* Ensure it is on top of everything */
+  transition: opacity 0.5s ease; /* Smooth transition for fade out */
+  color: var(--loading-text-color); /* Text color variable */
+  font-size: 24px; /* Font size for loading text */
+}
+
+/* Dot styles */
+.dot {
+  display: inline-block; /* Inline block for spacing */
+  animation: bounce 1s infinite; /* Bounce animation */
+  opacity: 0; /* Start with dots invisible */
+}
+
+/* Delay for each dot */
+.dot:nth-child(1) {
+  animation-delay: 0s; /* First dot no delay */
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s; /* Second dot delay */
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s; /* Third dot delay */
+}
+
+/* Bouncing animation keyframes */
+@keyframes bounce {
+  0%,
+  100% {
+    opacity: 0; /* Invisible at start and end */
+    transform: translateY(0); /* Original position */
+  }
+  50% {
+    opacity: 1; /* Fully visible at halfway */
+    transform: translateY(-20px); /* Bounce up */
+  }
+}
+
+#loading-screen.hidden {
+  opacity: 0; /* Fade out opacity */
+  pointer-events: none; /* Prevent interaction with hidden screen */
+}
+
+#loading-screen.hidden {
+  opacity: 0; /* Fade out opacity */
+  pointer-events: none; /* Prevent interaction with hidden screen */
 }
 
 #container {

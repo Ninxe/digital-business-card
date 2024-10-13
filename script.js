@@ -3,31 +3,30 @@ function toggleMode() {
   const html = document.documentElement
   const img = document.querySelector("#profile img")
   const switchButton = document.querySelector("#switch button")
+  const isLightMode = html.classList.contains("light")
 
-  // Check if we are toggling to light mode or dark mode
-  if (html.classList.contains("light")) {
-    // If it's currently light mode, switch to dark mode
+  // Toggle mode
+  if (isLightMode) {
     html.classList.remove("light")
     img.setAttribute("src", "./assets/avatar.png")
-    // Change button position to dark mode without animation
-    switchButton.style.transition = "none" // Disable transition during mode change
     switchButton.style.left = "0" // Set to dark mode position
-    // Save mode in local storage
     localStorage.setItem("mode", "dark")
   } else {
-    // If it's currently dark mode, switch to light mode
     html.classList.add("light")
     img.setAttribute("src", "./assets/avatar-light.png")
-    // Change button position to light mode without animation
-    switchButton.style.transition = "none" // Disable transition during mode change
     switchButton.style.left = "32px" // Set to light mode position
-    // Save mode in local storage
     localStorage.setItem("mode", "light")
   }
 
-  // Re-enable transition for subsequent toggles
+  // Enable transition for the background color
+  html.style.transition = "background-color 0.5s ease" // Smooth transition for background color
+
+  // Set transition for button after a short delay
+  switchButton.style.transition = "none" // Disable transition during button move
+
+  // Allow button transition to be re-enabled after a delay
   setTimeout(() => {
-    switchButton.style.transition = "" // Re-enable transition
+    switchButton.style.transition = "" // Re-enable transition for button
   }, 0)
 }
 
@@ -42,8 +41,19 @@ window.onload = function () {
   if (mode === "light") {
     html.classList.add("light")
     img.setAttribute("src", "./assets/avatar-light.png")
-    switchButton.style.left = "32px" // Set position without animation
+    switchButton.style.left = "32px" // Set position for light mode
   } else {
-    switchButton.style.left = "0" // Set position for dark mode without animation
+    switchButton.style.left = "0" // Set position for dark mode
   }
+
+  // Hide loading screen after a delay (1-2 seconds)
+  const loadingScreen = document.getElementById("loading-screen")
+  setTimeout(() => {
+    loadingScreen.classList.add("hidden") // Add hidden class to fade out
+  }, 1000) // Change this to 2000 for a 2-second delay, or 1000 for 1 second
+
+  // Restore the transition for the next toggle
+  setTimeout(() => {
+    html.style.transition = "background-color 0.5s ease" // Enable transition for background color
+  }, 0)
 }
