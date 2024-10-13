@@ -29,9 +29,6 @@ html {
   margin: 0;
   padding: 0;
 }
-* {
-  box-sizing: border-box;
-}
 
 body {
   background: #000 var(--bg-url) no-repeat top center/cover !important;
@@ -49,28 +46,30 @@ body * {
   padding: 0 24px;
 }
 
-/* profile */
+/* Profile Section Styles */
 #profile {
   text-align: center;
   padding: 16px;
 }
 
 #profile img {
-  width: 112px;
+  width: 112px; /* Avatar image width */
 }
 
 #profile h1 {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
-  margin-top: 8px;
+  font-size: 18px; /* Font size for the name */
+  font-weight: 500; /* Medium font weight */
+  line-height: 24px; /* Line height for spacing */
+  margin-top: 8px; /* Top margin */
+  color: var(--text-color); /* Text color based on the theme */
 }
 
 #profile h2 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  margin-top: 8px;
+  font-size: 16px; /* Font size for the title */
+  font-weight: 500; /* Medium font weight */
+  line-height: 24px; /* Line height for spacing */
+  margin-top: 8px; /* Top margin */
+  color: var(--text-color); /* Text color based on the theme */
 }
 
 #profile p {
@@ -83,47 +82,48 @@ body * {
   font-weight: 200;
 }
 
+/* Switch Button Styles */
 #switch {
-  position: relative;
-  width: 64px;
-  margin: 4px auto;
+  position: relative; /* Positioning for the toggle */
+  width: 64px; /* Width of the switch container */
+  margin: 4px auto; /* Center the switch with auto margins */
 }
 
-/* switch */
 #switch button {
-  width: 32px;
-  height: 32px;
-  background: white var(--switch-bg-url) no-repeat center;
-  border: 0;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: slide-left 0.2s;
-  cursor: pointer;
+  width: 32px; /* Width of the button */
+  height: 32px; /* Height of the button */
+  background: white var(--switch-bg-url) no-repeat center; /* Background image for the button */
+  border: 0; /* No border */
+  border-radius: 50%; /* Round shape */
+  position: absolute; /* Absolute positioning */
+  z-index: 1; /* Layering */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  animation: slide-left 0.2s; /* Slide animation */
+  cursor: pointer; /* Pointer cursor on hover */
 }
 
 .light #switch button {
-  animation: slide-right 0.2s forwards;
+  animation: slide-right 0.2s forwards; /* Slide animation for light mode */
 }
 
 #switch button:hover {
-  outline: 8px solid var(--highlight-color);
+  outline: 8px solid var(--highlight-color); /* Outline on hover */
 }
 
+/* Additional switch span styles */
 #switch span {
-  display: block;
-  width: 64px;
-  height: 24px;
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 9999px;
+  display: block; /* Block display */
+  width: 64px; /* Width of the switch */
+  height: 24px; /* Height of the switch */
+  background: var(--surface-color); /* Background color for the switch */
+  border: 1px solid var(--stroke-color); /* Border for the switch */
+  backdrop-filter: blur(4px); /* Background blur effect */
+  -webkit-backdrop-filter: blur(4px); /* Safari support for blur effect */
+  border-radius: 9999px; /* Round corners */
 }
 
-/* links */
+/* Links Styles */
 ul {
   list-style: none;
   display: flex;
@@ -147,13 +147,13 @@ ul li a {
   transition: background 0.2s;
 }
 
-/* pseudo-selector */
+/* Pseudo-selector for links */
 ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
 }
 
-/* social links */
+/* Social Links Styles */
 #social-links {
   display: flex;
   padding: 24px 0;
@@ -175,13 +175,14 @@ ul li a:hover {
   background: var(--highlight-color);
 }
 
+/* Footer Styles */
 footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
 }
 
-/* media queries */
+/* Media Queries */
 @media (min-width: 700px) {
   :root {
     --bg-url: url(./assets/bg-desktop.jpg);
@@ -192,7 +193,7 @@ footer {
   }
 }
 
-/* animation */
+/* Animation for Switch Button */
 @keyframes slide-right {
   from {
     left: 0;
